@@ -1,0 +1,7 @@
+name: SimpleArmorStandPose
+version: '${project.version}'
+main: net.simple.armor.stand.pose.Main
+api-version: 1.17
+authors: [ KessPenGames ]
+description: Плагин на позы у стоек для брони(Да да бедрок короче)
+website: https://kesspen.site/
