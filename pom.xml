@@ -6,17 +6,16 @@
 
     <groupId>net.simple.armor.stand.pose</groupId>
     <artifactId>SimpleArmorStandPose</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <packaging>jar</packaging>
 
     <name>SimpleArmorStandPose</name>
 
-    <description>Плагин на позы у стоек для брони(Да да бедрок короче)</description>
+    <description>Plugin for pose armor stand</description>
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <url>https://kesspen.site/</url>
 
     <build>
         <plugins>
@@ -69,7 +68,7 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.17.1-R0.1-SNAPSHOT</version>
+            <version>1.13.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
