@@ -3,6 +3,7 @@ package net.simple.armor.stand.pose;
 import net.simple.armor.stand.pose.listeners.ArmorPose;
 import net.simple.armor.stand.pose.listeners.ArmorSpawn;
 import net.simple.armor.stand.pose.utils.ArmorSetPose;
+import net.simple.armor.stand.pose.utils.MainConfig;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -15,14 +16,18 @@ public final class ArmorStandPose extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        File config = new File(getDataFolder() + File.separator + "config.yml");
-        if(!config.exists()) {
+        File fileConfig = new File(getDataFolder() + File.separator + "config.yml");
+        if(!fileConfig.exists()) {
             getConfig().options().copyDefaults(true);
             saveDefaultConfig();
         }
 
-        Bukkit.getPluginManager().registerEvents(new ArmorPose(armorPose, new ArmorSetPose(getConfig())), this); // ArmorStand Poses
-        Bukkit.getPluginManager().registerEvents(new ArmorSpawn(armorPose, new ArmorSetPose(getConfig())), this); // ArmorStand Spawn change pose
+        MainConfig config = new MainConfig(getConfig());
+
+        ArmorSetPose armorSetPose = new ArmorSetPose(config);
+
+        Bukkit.getPluginManager().registerEvents(new ArmorPose(armorPose, armorSetPose, config), this); // ArmorStand Poses
+        Bukkit.getPluginManager().registerEvents(new ArmorSpawn(armorPose, armorSetPose), this); // ArmorStand Spawn change pose
 
         getLogger().info("Started up!");
     }
