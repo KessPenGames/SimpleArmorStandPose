@@ -4,3 +4,6 @@ main: net.simple.armor.stand.pose.ArmorStandPose
 api-version: 1.13
 authors: [ KessPenGames ]
 description: Plugin for pose armor stand
+
+softdepend:
+  - LWC
