@@ -43,6 +43,13 @@ public class ArmorPose implements Listener {
 
         ArmorStand armorStand = (ArmorStand) event.getRightClicked();
 
+        if (config.getEnableChangeArmorStandPerm()) {
+            if (!player.hasPermission(config.getChangePosePerm())) {
+                player.sendMessage(config.getNotHavePerm());
+                return;
+            }
+        }
+
         // inform everybody that this plugin is about to change the pose
         ArmorStandPoseChangeEvent poseEvent = new ArmorStandPoseChangeEvent(armorStand, player, -1);
         Bukkit.getPluginManager().callEvent(poseEvent);
@@ -55,12 +62,6 @@ public class ArmorPose implements Listener {
         // all preconditions for cancelling met, cancel actual event
         event.setCancelled(true);
 
-        if (config.getEnableChangeArmorStandPerm()) {
-            if (!player.hasPermission(config.getChangePosePerm())) {
-                player.sendMessage(config.getNotHavePerm());
-                return;
-            }
-        }
 
         if (config.getEnableBlacklistWorlds()) {
             if (config.getBlacklistWorlds().contains(player.getWorld().getName())) {
