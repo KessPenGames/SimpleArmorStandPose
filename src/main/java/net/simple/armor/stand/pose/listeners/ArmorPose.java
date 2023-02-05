@@ -75,7 +75,7 @@ public class ArmorPose implements Listener {
                 return 2;
             }
             // last pose, go back to pose 1
-            if (armorSetPose.isLastPose(index + 1)) {
+            if (armorSetPose.isLastPose(index)) {
                 return 1;
             }
             // simply increase
