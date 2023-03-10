@@ -5,15 +5,21 @@
 
 enable-actionbar-pose: true
 enable-change-armorstand-perm: false
+disable-interact-armorstand-with-no-perm: false
 enable-blacklist-worlds: false
 
 blacklist-worlds: ["world"]
+
+worldguard:
+  enable-worldguard: false
+  armorstand-interact-disable-flad-id: "armorstand-interact-disable"
 
 messages:
   action-bar-message: "&6Pose: "
   change-pose-perm: "net.change.pose.perm"
   not-have-perm: "&4You don't have enough rights to do this!"
   disable-in-world: "&4In this world, it is forbidden to change poses at the armor stand!"
+  worldguard-interact-disable: "&4Interactions with the armor stand, are not allowed in this region."
 
 # You can add new poses!
 armor:

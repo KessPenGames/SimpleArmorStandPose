@@ -10,11 +10,11 @@ import org.bukkit.event.entity.EntitySpawnEvent;
 
 import java.util.HashMap;
 
-public class ArmorSpawn implements Listener {
+public class ArmorSpawnListener implements Listener {
     private final HashMap<Location, Integer> armorPose;
     private final ArmorSetPose armorSetPose;
 
-    public ArmorSpawn(HashMap<Location, Integer> armorPose, ArmorSetPose armorSetPose) {
+    public ArmorSpawnListener(HashMap<Location, Integer> armorPose, ArmorSetPose armorSetPose) {
         this.armorPose = armorPose;
         this.armorSetPose = armorSetPose;
     }
